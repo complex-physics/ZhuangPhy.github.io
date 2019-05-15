@@ -1,0 +1,135 @@
+---
+layout: page
+title: "Welcome to My Light cone"
+description: "My own little Bubble of My own Reality."
+header-img: "img/research environment.jpg"
+---
+
+<!-- Language Selector -->
+<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select> -->
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>Man tries to make for himself in the fashion that suits him best a simplified and intelligible picture of the world; he then tries to some extent to substitute this cosmos of his for the world of experience, and thus to overcome it.<br>
+    This is what the painter, the poet, the speculative philosopher, and the natural scientist do, each in his own fashion. ------Albert Einstein </p></blockquote>
+
+<p>Jiapei Zhuang</strong> belief in <a href="https://en.wikipedia.org/wiki/Reductionism">Reductionism</a> since high school. Reductionism and Feynman are two of main motives that have led him to the temple of Physics. Motives are also negative one, which are the escaping from noisy of everyday life, endless shifting desires and loneliness.</p>
+
+    <p>The belief crisis happened in the first month of his undergraduate when emergent phenomena was explained by the paper<a href="https://science.sciencemag.org/content/177/4047/393">《More Is Different》</a>, 
+and more discusion in Book<a href=" https://pdfs.semanticscholar.org/dfef/ac11ac3446fb1cb3e70450037ba7cb12f910.pdf">《Complexity: A Guided Tour》</a>. 
+The outcome of this crisis was the coexist of Emergentism and Reductionism, a contradiction terms, in mind. </p>
+
+<p> After attempts at Laser crystal growth; Dynamic in complex Network; APREES measurement of the microscope of the electrons behave. Jiapei decide to engage in theoretical physics, to construct mathematical models of world, 
+    and then test the predictions of such models against observation and experiments. This is the way physicists Dialogue with Nature, to understand how laws unfolded themselves in the objects of the nature world.</p>
+
+
+    <h5>Interest Domains</h5>
+    <p>
+        <li><a>Physics</a><br>Understand how laws unfolded themselves in the objects of the nature world.</li>
+        <li><a>Mathematics</a><br>Young man, in mathematics you don't understand things. You just get used to them</li>
+        <li><a>Computation</a><br>The boundary between what a computing machine could do and could not do.</li>
+        <li><a>Social Sciences</a><br>How Humans condensed to Social system.</li>
+   </p>
+
+    
+    <h5>EDUCATION</h5>
+
+
+    <ul>
+        <li><a href="https://www.fzu.edu.cn/">Department of Physics,Fuzhou University</a></li>
+        <li><a href="https://www.nthu.edu.tw/">Department of Physics,National Tsing Hua University</a></li>
+    </ul>
+</div>
+
+<!-- English Version -->
+<!-- <div class="en post-container">
+    <blockquote><p>Yet another iOS Developer. <br>
+    Yet another Life-long Student.</p></blockquote>
+
+    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+
+    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+    
+    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
+
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://qiubaiying.github.io">BY</a></li>
+    </ul>
+</div> -->
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+{% if site.disqus.enable %}
+
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus.username}}";
+    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
+
